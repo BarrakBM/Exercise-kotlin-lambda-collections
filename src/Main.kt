@@ -16,5 +16,10 @@ fun main() {
     // Part 2: Filtering Strings with Lambda
     val names = listOf("Alice", "Bob", "Amir", "Charlie", "Annie", "David")
     val namesWithA = filterNames(names) { it.contains('A') }
-    println(namesWithA) // print final result
+    println("Part 2: $namesWithA") // print final result
+
+    //Part 3: Sorting with Custom Lambda
+    val fruits = listOf("apple", "banana", "kiwi", "strawberry", "grape")
+    val fruitSortedByLength = fruits.sortedByDescending {it.length}
+    println("Part 3: $fruitSortedByLength")
 }
