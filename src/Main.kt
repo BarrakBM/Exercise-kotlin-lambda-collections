@@ -8,6 +8,16 @@ fun filterNames(names: List<String>, operation: (String) -> Boolean):List<String
     return names.filter(operation)
 }
 
+// Part 4:
+fun customFilter(numbers: List<Int>, filter: (Int) -> Boolean): List<Int>{
+    return numbers.filter(filter)
+}
+
+// Part 5:
+fun processNumbers(numbers: List<Int>, filter: (Int) -> Boolean): List<Int>{
+    return numbers.filter(filter)
+}
+
 fun main() {
     // Part 1: Lambda with List Transformation
     val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -22,4 +32,22 @@ fun main() {
     val fruits = listOf("apple", "banana", "kiwi", "strawberry", "grape")
     val fruitSortedByLength = fruits.sortedByDescending {it.length}
     println("Part 3: $fruitSortedByLength")
+
+    // Part 4:
+    // Creating a variable to reduce code redundancy.
+    val numbersList = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    println("Part 4: ${customFilter(numbersList){ it > 5 }}")
+    println("Part 4: ${customFilter(numbersList){ it % 2 == 0}}")
+    println("Part 4: ${customFilter(numbersList){ it % 3 == 0 }}")
+
+    // Part 5: Combining Lambdas
+    val processedNums = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    val evenNums = processNumbers(processedNums){ it % 2 != 0} // filter out the even numbers
+    val squaredEvenNums = evenNums.map { it * it }
+    println("Part 5: $squaredEvenNums")
+
+
+
+
+
 }
